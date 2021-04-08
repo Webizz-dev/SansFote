@@ -30,7 +30,7 @@ client.on('message', msg => {
         if (res.error) throw new Error(res.error);
         let response = res.body.matches;
         let nbrFautes = 0;
-        response.forEach(nbrFautes++);
+        response.forEach(faute => nbrFautes++);
 
         if (nbrFautes == 1) {
             chan.send("Tu as fais une faute dans cette phrase : " + response[0].sentence)
